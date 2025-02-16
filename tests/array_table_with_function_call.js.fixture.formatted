@@ -1,0 +1,5 @@
+// prettier-table
+const v = [
+  ["a"        , "b"           , "c"],
+  [parseInt(a), parseInt("12"), 3  ],
+];

@@ -1,0 +1,6 @@
+// prettier-table
+abc.cde.fn(
+  ["abc", "c"   , "ghijk"],
+  [4    , 54    , 123    ],
+  [71   , 800000, 9      ],
+);

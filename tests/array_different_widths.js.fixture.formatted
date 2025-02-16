@@ -1,0 +1,6 @@
+// prettier-table
+const v = [
+  ["abc", "c"   , "ghijk"],
+  [4    , 54    , 123    ],
+  [71   , 800000, 9      ],
+];
