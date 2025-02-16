@@ -18,9 +18,9 @@ const v = [
 
 // prettier-table
 callFn(
-    ["abc", "c"   , "ghijk"],
-    [4    , 54    , 123    ],
-    [71   , 800000, 9      ],
+  ["abc", "c"   , "ghijk"],
+  [4    , 54    , 123    ],
+  [71   , 800000, 9      ],
 );
 ```
 
@@ -47,9 +47,9 @@ The behavior is controlled manually. By default, nothing is aligned. To align a 
 ```typescript
 // prettier-table
 const v = [
-    ["abc", "c"   , "ghijk"],
-    [4    , 54    , 123    ],
-    [71   , 800000, 9      ],
+  ["abc", "c"   , "ghijk"],
+  [4    , 54    , 123    ],
+  [71   , 800000, 9      ],
 ];
 ```
 
@@ -58,9 +58,9 @@ or
 ```typescript
 // prettier-table
 callFn(
-    ["abc", "c"   , "ghijk"],
-    [4    , 54    , 123    ],
-    [71   , 800000, 9      ],
+  ["abc", "c"   , "ghijk"],
+  [4    , 54    , 123    ],
+  [71   , 800000, 9      ],
 );
 ```
 
