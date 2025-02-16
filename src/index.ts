@@ -6,8 +6,8 @@ import {
   Printer,
   SupportLanguage,
 } from "prettier";
-import parserTypescript from "prettier/parser-typescript";
-import * as estree from "prettier/plugins/estree.mjs";
+import * as parserTypescript from "prettier/parser-typescript";
+import * as estree from "prettier/plugins/estree.js";
 import type { TSESTreeOptions } from "@typescript-eslint/typescript-estree";
 import {
   AST,
@@ -18,10 +18,10 @@ import { AST_NODE_TYPES, TSESTree } from "@typescript-eslint/types";
 import { builders as pb, printer } from "prettier/doc";
 import {
   PrintedDoc,
+  printFunctionTypeParameters,
   printOptionalToken,
   shouldPrintComma,
-  printFunctionTypeParameters,
-} from "./prettier-utils.mjs";
+} from "./prettier-utils.js";
 
 export const languages: SupportLanguage[] = [
   {

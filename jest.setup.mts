@@ -1,1 +1,1 @@
-import './tests/utils/toMatchFile.mjs';
+import './tests/utils/toMatchFile.js';

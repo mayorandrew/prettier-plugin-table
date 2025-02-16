@@ -3,11 +3,11 @@ const config = {
   moduleFileExtensions: ["js", "json", "ts", "mts", "mjs"],
   collectCoverageFrom: ["<rootDir>/src/**/*.mts", "!<rootDir>/node_modules/"],
   transform: {
-    "^.+\\.mts$": ["ts-jest", { useESM: true, isolatedModules: true }],
+    "^.+\\.m?ts$": ["ts-jest", { isolatedModules: true }],
   },
   resolver: 'ts-jest-resolver',
   extensionsToTreatAsEsm: [".mts"],
-  testMatch: ["<rootDir>/**/*.test.mts"],
+  testMatch: ["<rootDir>/**/*.test.{mts,ts}"],
   testEnvironment: "node",
   setupFilesAfterEnv: ["<rootDir>/jest.setup.mts"],
   clearMocks: true,

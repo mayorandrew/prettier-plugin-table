@@ -1,17 +1,52 @@
 {
-  "name": "prettier-table",
+  "name": "prettier-plugin-table",
   "version": "1.0.0",
   "description": "Prettier plugin for formatting tables in TypeScript",
+  "author": "Andrey Starostin",
+  "license": "MIT",
   "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "LICENSE",
+    "package.json",
+    "package-lock.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mayorandrew/prettier-plugin-table.git"
+  },
+  "homepage": "https://github.com/mayorandrew/prettier-plugin-table",
+  "keywords": [
+    "prettier",
+    "plugin",
+    "prettier-plugin",
+    "table",
+    "formatting",
+    "typescript",
+    "align",
+    "columns"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "module",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -p tsconfig.build.json",
     "test": "NODE_OPTIONS='--experimental-vm-modules' jest",
+    "test-fix": "NODE_OPTIONS='--experimental-vm-modules' jest --updateSnapshot",
     "prepare": "npm run build",
     "format": "prettier --write ."
   },
-  "author": "Andrey Starostin",
-  "license": "ISC",
   "dependencies": {
     "@typescript-eslint/typescript-estree": "^8.24.0",
     "@typescript-eslint/types": "^8.24.0"
@@ -29,5 +64,6 @@
   },
   "peerDependencies": {
     "prettier": "^3.0.0"
-  }
+  },
+  "sideEffects": false
 }

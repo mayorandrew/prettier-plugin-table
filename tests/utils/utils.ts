@@ -4,7 +4,7 @@ import { URL, fileURLToPath } from "node:url";
 import type { Options } from "prettier";
 import { format } from "prettier";
 import { expect } from "@jest/globals";
-import * as plugin from "../../src/index.mjs";
+import * as plugin from "../../src/index.js";
 
 export async function expectSnapshot(
   metaUrl: string,

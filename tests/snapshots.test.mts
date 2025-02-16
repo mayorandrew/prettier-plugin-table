@@ -1,5 +1,5 @@
 import { test } from "@jest/globals";
-import { expectSnapshot } from "./utils/utils.mjs";
+import { expectSnapshot } from "./utils/utils.js";
 import { glob } from "glob";
 import path from "path";
 import { fileURLToPath } from "url";
