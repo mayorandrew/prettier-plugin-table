@@ -11,27 +11,25 @@ Align columns in tables in typescript source files with prettier!
 ```typescript
 // prettier-table
 const v = [
-  ["abc", "c"   , "ghijk"],
-  [4    , 54    , 123    ],
-  [71   , 800000, 9      ],
+  ["abc", "c", "ghijk"],
+  [4, 54, 123],
+  [71, 800000, 9],
 ];
 
 // prettier-table
-callFn(
-    ["abc", "c"   , "ghijk"],
-    [4    , 54    , 123    ],
-    [71   , 800000, 9      ],
-);
+callFn(["abc", "c", "ghijk"], [4, 54, 123], [71, 800000, 9]);
 ```
 
 ## Installation
 
 First, install the package:
+
 ```bash
 npm install --save-dev prettier-plugin-table
 ```
 
-Then adjust your prettier configuration:
+Then add the plugin to the `plugins` array in your prettier configuration (e.g. `.prettierrc` file):
+
 ```json
 {
   "plugins": ["prettier-plugin-table"]
@@ -47,9 +45,9 @@ The behavior is controlled manually. By default, nothing is aligned. To align a 
 ```typescript
 // prettier-table
 const v = [
-    ["abc", "c"   , "ghijk"],
-    [4    , 54    , 123    ],
-    [71   , 800000, 9      ],
+  ["abc", "c", "ghijk"],
+  [4, 54, 123],
+  [71, 800000, 9],
 ];
 ```
 
@@ -57,11 +55,7 @@ or
 
 ```typescript
 // prettier-table
-callFn(
-    ["abc", "c"   , "ghijk"],
-    [4    , 54    , 123    ],
-    [71   , 800000, 9      ],
-);
+callFn(["abc", "c", "ghijk"], [4, 54, 123], [71, 800000, 9]);
 ```
 
 The columns are be aligned to the most wide element in each column.
