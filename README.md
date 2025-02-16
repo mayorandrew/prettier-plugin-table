@@ -34,8 +34,7 @@ npm install --save-dev prettier-plugin-table
 Then adjust your prettier configuration:
 ```json
 {
-  ...
-  "plugins": [..., "prettier-plugin-table"]
+  "plugins": ["prettier-plugin-table"]
 }
 ```
 
