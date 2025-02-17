@@ -7,7 +7,7 @@ import {
   SupportLanguage,
 } from "prettier";
 import * as parserTypescript from "prettier/parser-typescript";
-import * as estree from "prettier/plugins/estree.js";
+import * as pluginEstree from "prettier/plugins/estree";
 import type { TSESTreeOptions } from "@typescript-eslint/typescript-estree";
 import {
   AST,
@@ -32,12 +32,14 @@ export const languages: SupportLanguage[] = [
 
 const tableSymbol = Symbol("isTable");
 
+const typescript: typeof parserTypescript.parsers.typescript =
+  parserTypescript.parsers?.typescript ??
+  (parserTypescript as any).default?.parsers?.typescript;
 export const parsers = {
   typescript: ((): Parser => ({
-    ...parserTypescript.parsers.typescript,
+    ...typescript,
     parse: (text: string, options: any) => {
-      const ast: AST<TSESTreeOptions> =
-        parserTypescript.parsers.typescript.parse(text, options);
+      const ast: AST<TSESTreeOptions> = typescript.parse(text, options);
 
       // fs.writeFileSync('debug_ast.json', JSON.stringify(ast, null, 2));
 
@@ -145,14 +147,37 @@ const removeLineBreaks = (element: Doc): Doc | null => {
   }
 };
 
+const estree: typeof pluginEstree.printers.estree =
+  pluginEstree.printers?.estree ??
+  (pluginEstree as any).default?.printers.estree;
+
+const getDefaultPrint = (options: ParserOptions) => {
+  let print = estree.print;
+  for (const plugin of options.plugins) {
+    if (typeof plugin === 'string') {
+      continue;
+    }
+
+    if (plugin.printers === printers) {
+      break;
+    }
+
+    if (plugin.printers?.estree?.print) {
+      print = plugin.printers.estree.print;
+    }
+  }
+  return print;
+};
+
 export const printers = {
   estree: ((): Printer => ({
-    ...estree.printers.estree,
+    ...estree,
     print: function (
       path: AstPath<TSESTree.Node>,
       options: ParserOptions,
       print: (path: AstPath) => Doc,
     ) {
+      const defaultPrint = getDefaultPrint(options);
       const node: TSESTree.Node = path.node;
 
       const formatRow = (
@@ -270,7 +295,7 @@ export const printers = {
       }
 
       // Use default printer for non-table nodes
-      return estree.printers.estree.print(path, options, print);
+      return defaultPrint(path, options, print);
     },
   }))(),
 } satisfies Record<string, Printer>;
