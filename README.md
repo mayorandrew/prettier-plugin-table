@@ -15,7 +15,7 @@ and all my attempts to work around its limitations so far have failed.
 
 More related information is available under this thread: https://github.com/prettier/prettier/issues/13729
 
-Check out another project that does a similar thing: https://github.com/electrovir/prettier-plugin-multiline-arrays/
+Check out another project that something relevant: https://github.com/electrovir/prettier-plugin-multiline-arrays/
 
 ## Example
 
