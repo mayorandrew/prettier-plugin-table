@@ -6,7 +6,7 @@ import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const fixtures = await glob("**/*.fixture", { cwd: __dirname });
-// const fixtures = ['fn_different_widths.js.fixture'];
+// const fixtures = ['array_simple_table.js.fixture'];
 
 test.each(fixtures)("%s", async (path) => {
   await expectSnapshot(import.meta.url, path);
