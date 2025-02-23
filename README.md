@@ -1,10 +1,19 @@
 <div align="center">
 
-# Prettier Plugin Table
+# 🚧 Prettier Plugin Table 🚧
 
 Align columns in tables in typescript source files with prettier!
 
 </div>
+
+## Disclaimer
+
+This is a Work In Progress project. The plugin doesn't actually work yet.
+
+The prettier plugin API turned out to be not intended for this purpose,
+and all my attempts to work around its limitations so far have failed.
+
+More related information is available under this thread: https://github.com/prettier/prettier/issues/13729
 
 ## Example
 
